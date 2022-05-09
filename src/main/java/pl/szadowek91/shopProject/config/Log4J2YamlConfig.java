@@ -7,7 +7,7 @@ public class Log4J2YamlConfig {
 
     private Logger logger = LogManager.getLogger();
 
-    public void performSomeTask() {
+    public void performSomeTask() { // test method
         logger.debug("This is a debug message");
         logger.info("This is an info message");
         logger.warn("This is a warn message");

@@ -2,6 +2,7 @@ package pl.szadowek91.shopProject.entity;
 
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,10 +18,11 @@ import java.util.List;
 @ToString
 @Entity
 @DynamicUpdate
-public class User implements UserDetails {
+public class ShopUser implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name = "userId", strategy = "increment")
+    @GeneratedValue(generator = "userId")
     @Column(updatable = false)
     private Integer id;
 

@@ -2,6 +2,7 @@ package pl.szadowek91.shopProject.entity;
 
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -14,7 +15,8 @@ import javax.persistence.*;
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name = "categoryId", strategy = "increment")
+    @GeneratedValue(generator = "categoryId")
     @Column(updatable = false)
     private Integer id;
 

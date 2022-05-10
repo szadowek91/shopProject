@@ -514,8 +514,8 @@ Caused by: org.hibernate.AnnotationException: Illegal attempt to map a non colle
 2022-05-10 12:31:39.918  INFO 6072 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
 2022-05-10 12:31:40.112  INFO 6072 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
 2022-05-10 12:31:40.258  INFO 6072 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.FirebirdDialect
-2022-05-10 12:31:40.418 ERROR 6072 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: @OneToOne or @ManyToOne on pl.szadowek91.shopProject.entity.Advert.userId references an unknown entity: java.lang.Integer
-2022-05-10 12:31:40.418  WARN 6072 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on pl.szadowek91.shopProject.entity.Advert.userId references an unknown entity: java.lang.Integer
+2022-05-10 12:31:40.418 ERROR 6072 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: @OneToOne or @ManyToOne on pl.szadowek91.shopProject.entity.Advert.shopUserId references an unknown entity: java.lang.Integer
+2022-05-10 12:31:40.418  WARN 6072 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on pl.szadowek91.shopProject.entity.Advert.shopUserId references an unknown entity: java.lang.Integer
 2022-05-10 12:31:40.418  INFO 6072 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-05-10 12:31:40.443  INFO 6072 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 2022-05-10 12:31:40.448  INFO 6072 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
@@ -524,7 +524,7 @@ Caused by: org.hibernate.AnnotationException: Illegal attempt to map a non colle
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2022-05-10 12:31:40.478 ERROR 6072 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on pl.szadowek91.shopProject.entity.Advert.userId references an unknown entity: java.lang.Integer
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on pl.szadowek91.shopProject.entity.Advert.shopUserId references an unknown entity: java.lang.Integer
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.16.jar:5.3.16]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
@@ -547,7 +547,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.4.jar:2.6.4]
-Caused by: org.hibernate.AnnotationException: @OneToOne or @ManyToOne on pl.szadowek91.shopProject.entity.Advert.userId references an unknown entity: java.lang.Integer
+Caused by: org.hibernate.AnnotationException: @OneToOne or @ManyToOne on pl.szadowek91.shopProject.entity.Advert.shopUserId references an unknown entity: java.lang.Integer
 	at org.hibernate.cfg.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:100) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
 	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processEndOfQueue(InFlightMetadataCollectorImpl.java:1750) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
 	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processFkSecondPassesInOrder(InFlightMetadataCollectorImpl.java:1694) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
@@ -742,3 +742,976 @@ Using generated security password: 72cee1e5-0fd6-4c6f-a5b1-d05ce4c50d50
 2022-05-10 12:41:18.158  INFO 16304 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-05-10 12:41:18.158  INFO 16304 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-05-10 12:41:18.158  INFO 16304 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-05-10 12:52:35.921  INFO 13668 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Starting ShopProjectApplication using Java 16.0.1 on komp-197 with PID 13668 (D:\patrgra\shopProject\shopProject\target\classes started by Michał in D:\patrgra\shopProject\shopProject)
+2022-05-10 12:52:35.921  INFO 13668 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 12:52:35.994  INFO 13668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-10 12:52:35.994  INFO 13668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-10 12:52:36.789  INFO 13668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-10 12:52:36.849  INFO 13668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
+2022-05-10 12:52:37.583  INFO 13668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-05-10 12:52:37.589  INFO 13668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 12:52:37.589  INFO 13668 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 12:52:37.704  INFO 13668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 12:52:37.704  INFO 13668 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1710 ms
+2022-05-10 12:52:37.909  INFO 13668 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-10 12:52:37.949  INFO 13668 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-05-10 12:52:38.109  INFO 13668 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-10 12:52:38.199  INFO 13668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-10 12:52:38.289  INFO 13668 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (Not yet implemented.)
+2022-05-10 12:52:38.289  INFO 13668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-10 12:52:38.334  INFO 13668 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.FirebirdDialect
+2022-05-10 12:52:39.069 ERROR 13668 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: org.hibernate.dialect.identity.IdentityColumnSupportImpl does not support identity key generation
+2022-05-10 12:52:39.069  WARN 13668 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: org.hibernate.dialect.identity.IdentityColumnSupportImpl does not support identity key generation
+2022-05-10 12:52:39.069  INFO 13668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-05-10 12:52:39.089  INFO 13668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-05-10 12:52:39.089  INFO 13668 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-05-10 12:52:39.099  INFO 13668 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-10 12:52:39.119 ERROR 13668 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: org.hibernate.dialect.identity.IdentityColumnSupportImpl does not support identity key generation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.4.jar:2.6.4]
+	at pl.szadowek91.shopProject.ShopProjectApplication.main(ShopProjectApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.4.jar:2.6.4]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: org.hibernate.dialect.identity.IdentityColumnSupportImpl does not support identity key generation
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: org.hibernate.dialect.identity.IdentityColumnSupportImpl does not support identity key generation
+	at org.hibernate.dialect.identity.IdentityColumnSupportImpl.getIdentityColumnString(IdentityColumnSupportImpl.java:45) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.StandardTableExporter.getSqlCreateStrings(StandardTableExporter.java:88) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.StandardTableExporter.getSqlCreateStrings(StandardTableExporter.java:30) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:295) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:74) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:220) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	... 25 common frames omitted
+
+2022-05-10 12:57:26.535  INFO 11180 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Starting ShopProjectApplication using Java 16.0.1 on komp-197 with PID 11180 (D:\patrgra\shopProject\shopProject\target\classes started by Michał in D:\patrgra\shopProject\shopProject)
+2022-05-10 12:57:26.535  INFO 11180 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 12:57:26.599  INFO 11180 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-10 12:57:26.599  INFO 11180 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-10 12:57:27.405  INFO 11180 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-10 12:57:27.475  INFO 11180 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2022-05-10 12:57:28.215  INFO 11180 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-05-10 12:57:28.235  INFO 11180 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 12:57:28.235  INFO 11180 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 12:57:28.345  INFO 11180 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 12:57:28.345  INFO 11180 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1744 ms
+2022-05-10 12:57:28.575  INFO 11180 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-10 12:57:28.625  INFO 11180 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-05-10 12:57:28.770  INFO 11180 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-10 12:57:28.865  INFO 11180 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-10 12:57:28.945  INFO 11180 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (Not yet implemented.)
+2022-05-10 12:57:28.955  INFO 11180 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-10 12:57:28.985  INFO 11180 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.FirebirdDialect
+2022-05-10 12:57:29.755 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table address (
+       id integer not null,
+        city varchar(255),
+        country varchar(255),
+        district varchar(255),
+        flat_number varchar(255),
+        house_number varchar(255),
+        province varchar(255),
+        street varchar(255),
+        zip_code varchar(255),
+        user_id integer,
+        primary key (id)
+    )
+2022-05-10 12:57:29.785 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table advert (
+       id integer not null,
+        description varchar(255),
+        price integer,
+        title varchar(255),
+        category_id integer,
+        user_id integer,
+        primary key (id)
+    )
+2022-05-10 12:57:29.795 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table category (
+       id integer not null,
+        category_description varchar(255),
+        category_name varchar(255),
+        primary key (id)
+    )
+2022-05-10 12:57:29.795 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table user (
+       id integer not null,
+        ban_end_date timestamp,
+        ban_start_date timestamp,
+        e_mail varchar(255),
+        f_name varchar(255),
+        active varchar(255),
+        banned varchar(255),
+        l_name varchar(255),
+        nick varchar(255),
+        password varchar(255),
+        permissions_profile varchar(255),
+        phone_number varchar(255),
+        registration_date timestamp,
+        primary key (id)
+    )
+2022-05-10 12:57:29.815  WARN 11180 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table user (
+       id integer not null,
+        ban_end_date timestamp,
+        ban_start_date timestamp,
+        e_mail varchar(255),
+        f_name varchar(255),
+        active varchar(255),
+        banned varchar(255),
+        l_name varchar(255),
+        nick varchar(255),
+        password varchar(255),
+        permissions_profile varchar(255),
+        phone_number varchar(255),
+        registration_date timestamp,
+        primary key (id)
+    )" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table user (
+       id integer not null,
+        ban_end_date timestamp,
+        ban_start_date timestamp,
+        e_mail varchar(255),
+        f_name varchar(255),
+        active varchar(255),
+        banned varchar(255),
+        l_name varchar(255),
+        nick varchar(255),
+        password varchar(255),
+        permissions_profile varchar(255),
+        phone_number varchar(255),
+        registration_date timestamp,
+        primary key (id)
+    )" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.createTable(AbstractSchemaMigrator.java:293) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:74) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:220) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.4.jar:2.6.4]
+	at pl.szadowek91.shopProject.ShopProjectApplication.main(ShopProjectApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.4.jar:2.6.4]
+Caused by: org.firebirdsql.jdbc.FBSQLException: GDS Exception. 335544569. Dynamic SQL Error
+SQL error code = -104
+Token unknown - line 2, column 18
+user
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:869) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	... 39 common frames omitted
+Caused by: org.firebirdsql.gds.GDSException: Dynamic SQL Error
+SQL error code = -104
+Token unknown - line 2, column 18
+user
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.readStatusVector(AbstractJavaGDSImpl.java:2092) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.receiveResponse(AbstractJavaGDSImpl.java:2042) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.iscDsqlPrepare(AbstractJavaGDSImpl.java:1465) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.GDSHelper.prepareStatement(GDSHelper.java:190) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.prepareFixedStatement(AbstractStatement.java:1441) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.internalExecute(AbstractStatement.java:1423) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:867) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	... 42 common frames omitted
+
+2022-05-10 12:57:29.815 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table user_address_id (
+       user_id integer not null,
+        address_id_id integer not null
+    )
+2022-05-10 12:57:29.825 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_address_id 
+       drop constraint UK_hgytvb5jtjl9n1ue6mfv1xfs1
+2022-05-10 12:57:29.825 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_address_id 
+       add constraint UK_hgytvb5jtjl9n1ue6mfv1xfs1 unique (address_id_id)
+2022-05-10 12:57:29.835 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table address 
+       add constraint FKda8tuywtf0gb6sedwk7la1pgi 
+       foreign key (user_id) 
+       references user
+2022-05-10 12:57:29.835  WARN 11180 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table address 
+       add constraint FKda8tuywtf0gb6sedwk7la1pgi 
+       foreign key (user_id) 
+       references user" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table address 
+       add constraint FKda8tuywtf0gb6sedwk7la1pgi 
+       foreign key (user_id) 
+       references user" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:452) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:263) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.4.jar:2.6.4]
+	at pl.szadowek91.shopProject.ShopProjectApplication.main(ShopProjectApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.4.jar:2.6.4]
+Caused by: org.firebirdsql.jdbc.FBSQLException: GDS Exception. 335544569. Dynamic SQL Error
+SQL error code = -104
+Token unknown - line 5, column 19
+user
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:869) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	... 38 common frames omitted
+Caused by: org.firebirdsql.gds.GDSException: Dynamic SQL Error
+SQL error code = -104
+Token unknown - line 5, column 19
+user
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.readStatusVector(AbstractJavaGDSImpl.java:2092) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.receiveResponse(AbstractJavaGDSImpl.java:2042) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.iscDsqlPrepare(AbstractJavaGDSImpl.java:1465) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.GDSHelper.prepareStatement(GDSHelper.java:190) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.prepareFixedStatement(AbstractStatement.java:1441) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.internalExecute(AbstractStatement.java:1423) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:867) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	... 41 common frames omitted
+
+2022-05-10 12:57:29.835 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table advert 
+       add constraint FK6agljw6tcfvtb0ug6b8cvwgvb 
+       foreign key (category_id) 
+       references category
+2022-05-10 12:57:29.845 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table advert 
+       add constraint FKjds5rnsjbg4gr45pmn8bgd7dj 
+       foreign key (user_id) 
+       references user
+2022-05-10 12:57:29.845  WARN 11180 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table advert 
+       add constraint FKjds5rnsjbg4gr45pmn8bgd7dj 
+       foreign key (user_id) 
+       references user" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table advert 
+       add constraint FKjds5rnsjbg4gr45pmn8bgd7dj 
+       foreign key (user_id) 
+       references user" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:452) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:263) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.4.jar:2.6.4]
+	at pl.szadowek91.shopProject.ShopProjectApplication.main(ShopProjectApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.4.jar:2.6.4]
+Caused by: org.firebirdsql.jdbc.FBSQLException: GDS Exception. 335544569. Dynamic SQL Error
+SQL error code = -104
+Token unknown - line 5, column 19
+user
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:869) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	... 38 common frames omitted
+Caused by: org.firebirdsql.gds.GDSException: Dynamic SQL Error
+SQL error code = -104
+Token unknown - line 5, column 19
+user
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.readStatusVector(AbstractJavaGDSImpl.java:2092) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.receiveResponse(AbstractJavaGDSImpl.java:2042) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.iscDsqlPrepare(AbstractJavaGDSImpl.java:1465) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.GDSHelper.prepareStatement(GDSHelper.java:190) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.prepareFixedStatement(AbstractStatement.java:1441) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.internalExecute(AbstractStatement.java:1423) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:867) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	... 41 common frames omitted
+
+2022-05-10 12:57:29.845 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_address_id 
+       add constraint FKp7g5f2mj4d83cefd7pipmhmcl 
+       foreign key (address_id_id) 
+       references address
+2022-05-10 12:57:29.845 DEBUG 11180 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table user_address_id 
+       add constraint FKmj8xbmqd3xgwyca15sdmj4qds 
+       foreign key (user_id) 
+       references user
+2022-05-10 12:57:29.855  WARN 11180 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table user_address_id 
+       add constraint FKmj8xbmqd3xgwyca15sdmj4qds 
+       foreign key (user_id) 
+       references user" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table user_address_id 
+       add constraint FKmj8xbmqd3xgwyca15sdmj4qds 
+       foreign key (user_id) 
+       references user" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:581) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:526) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:452) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:263) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:123) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:192) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.4.jar:2.6.4]
+	at pl.szadowek91.shopProject.ShopProjectApplication.main(ShopProjectApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.4.jar:2.6.4]
+Caused by: org.firebirdsql.jdbc.FBSQLException: GDS Exception. 335544569. Dynamic SQL Error
+SQL error code = -104
+Token unknown - line 5, column 19
+user
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:869) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	... 38 common frames omitted
+Caused by: org.firebirdsql.gds.GDSException: Dynamic SQL Error
+SQL error code = -104
+Token unknown - line 5, column 19
+user
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.readStatusVector(AbstractJavaGDSImpl.java:2092) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.receiveResponse(AbstractJavaGDSImpl.java:2042) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.iscDsqlPrepare(AbstractJavaGDSImpl.java:1465) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.GDSHelper.prepareStatement(GDSHelper.java:190) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.prepareFixedStatement(AbstractStatement.java:1441) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.internalExecute(AbstractStatement.java:1423) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:867) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	... 41 common frames omitted
+
+2022-05-10 12:57:29.855  INFO 11180 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-10 12:57:29.855  INFO 11180 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-10 12:57:29.910  WARN 11180 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-10 12:57:30.695  INFO 11180 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 74a00a7d-67dc-4eb7-b796-ab86b0aac851
+
+2022-05-10 12:57:30.805  INFO 11180 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-10 12:57:30.875  INFO 11180 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 12:57:30.935  INFO 11180 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-05-10 12:57:30.945  INFO 11180 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Started ShopProjectApplication in 4.938 seconds (JVM running for 5.575)
+2022-05-10 13:01:17.375  INFO 640 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Starting ShopProjectApplication using Java 16.0.1 on komp-197 with PID 640 (D:\patrgra\shopProject\shopProject\target\classes started by Michał in D:\patrgra\shopProject\shopProject)
+2022-05-10 13:01:17.375  INFO 640 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 13:01:17.450  INFO 640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-10 13:01:17.450  INFO 640 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-10 13:01:18.199  INFO 640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-10 13:01:18.260  INFO 640 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
+2022-05-10 13:01:18.970  INFO 640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-05-10 13:01:18.990  INFO 640 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 13:01:18.990  INFO 640 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 13:01:19.100  INFO 640 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 13:01:19.100  INFO 640 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1650 ms
+2022-05-10 13:01:19.300  INFO 640 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-10 13:01:19.350  INFO 640 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-05-10 13:01:19.510  INFO 640 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-10 13:01:19.610  INFO 640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-10 13:01:19.710  INFO 640 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (Not yet implemented.)
+2022-05-10 13:01:19.710  INFO 640 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-10 13:01:19.749  INFO 640 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.FirebirdDialect
+2022-05-10 13:01:20.520 DEBUG 640 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table shop_user (
+       id integer not null,
+        ban_end_date timestamp,
+        ban_start_date timestamp,
+        e_mail varchar(255),
+        f_name varchar(255),
+        active varchar(255),
+        banned varchar(255),
+        l_name varchar(255),
+        nick varchar(255),
+        password varchar(255),
+        permissions_profile varchar(255),
+        phone_number varchar(255),
+        registration_date timestamp,
+        primary key (id)
+    )
+2022-05-10 13:01:20.530 DEBUG 640 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table shop_user_address_id (
+       shop_user_id integer not null,
+        address_id_id integer not null
+    )
+2022-05-10 13:01:20.539 DEBUG 640 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       drop constraint UK_gnaeuxk3hqr8j95iq7n26ghwg
+2022-05-10 13:01:20.550 DEBUG 640 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       add constraint UK_gnaeuxk3hqr8j95iq7n26ghwg unique (address_id_id)
+2022-05-10 13:01:20.559 DEBUG 640 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table address 
+       add constraint FK6tkr4vdaywh4vhdonqaem82v7 
+       foreign key (user_id) 
+       references shop_user
+2022-05-10 13:01:20.570 DEBUG 640 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table advert 
+       add constraint FKs51n7uify9i6im5qaupt3j5se 
+       foreign key (user_id) 
+       references shop_user
+2022-05-10 13:01:20.570 DEBUG 640 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       add constraint FKssffo45v668olwvgjfeqgh0ih 
+       foreign key (address_id_id) 
+       references address
+2022-05-10 13:01:20.580 DEBUG 640 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       add constraint FKc6308n7y084do232n9lkfd4ti 
+       foreign key (shop_user_id) 
+       references shop_user
+2022-05-10 13:01:20.580  INFO 640 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-10 13:01:20.590  INFO 640 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-10 13:01:20.639  WARN 640 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-10 13:01:21.390  INFO 640 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 80e11321-a29a-4452-9af2-cf76e8732a3e
+
+2022-05-10 13:01:21.500  INFO 640 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-10 13:01:21.560  INFO 640 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 13:01:21.635  INFO 640 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-05-10 13:01:21.645  INFO 640 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Started ShopProjectApplication in 4.885 seconds (JVM running for 5.557)
+2022-05-10 13:03:06.956  INFO 7212 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Starting ShopProjectApplication using Java 16.0.1 on komp-197 with PID 7212 (D:\patrgra\shopProject\shopProject\target\classes started by Michał in D:\patrgra\shopProject\shopProject)
+2022-05-10 13:03:06.960  INFO 7212 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 13:03:07.040  INFO 7212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-10 13:03:07.040  INFO 7212 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-10 13:03:07.795  INFO 7212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-10 13:03:07.850  INFO 7212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
+2022-05-10 13:03:08.589  INFO 7212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-05-10 13:03:08.600  INFO 7212 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 13:03:08.600  INFO 7212 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 13:03:08.715  INFO 7212 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 13:03:08.715  INFO 7212 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1675 ms
+2022-05-10 13:03:08.920  INFO 7212 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-10 13:03:08.970  INFO 7212 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-05-10 13:03:09.130  INFO 7212 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-10 13:03:09.220  INFO 7212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-10 13:03:09.320  INFO 7212 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (Not yet implemented.)
+2022-05-10 13:03:09.320  INFO 7212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-10 13:03:09.370  INFO 7212 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.FirebirdDialect
+2022-05-10 13:03:10.010 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table address 
+       drop constraint FK6tkr4vdaywh4vhdonqaem82v7
+2022-05-10 13:03:10.050 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table advert 
+       drop constraint FK6agljw6tcfvtb0ug6b8cvwgvb
+2022-05-10 13:03:10.050 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table advert 
+       drop constraint FKs51n7uify9i6im5qaupt3j5se
+2022-05-10 13:03:10.060 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       drop constraint FKssffo45v668olwvgjfeqgh0ih
+2022-05-10 13:03:10.060 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       drop constraint FKc6308n7y084do232n9lkfd4ti
+2022-05-10 13:03:10.060 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table address
+2022-05-10 13:03:10.080  WARN 7212 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    drop table address" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    drop table address" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:387) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:371) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:246) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:156) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:128) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:114) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:153) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.4.jar:2.6.4]
+	at pl.szadowek91.shopProject.ShopProjectApplication.main(ShopProjectApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.4.jar:2.6.4]
+Caused by: org.firebirdsql.jdbc.FBSQLException: GDS Exception. 335544351. unsuccessful metadata update
+ERASE RDB$RELATION_CONSTRAINTS failed
+null
+null
+action cancelled by trigger (1) to preserve data integrity
+Cannot delete PRIMARY KEY being used in FOREIGN KEY definition.
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:869) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	... 39 common frames omitted
+Caused by: org.firebirdsql.gds.GDSException: unsuccessful metadata update
+ERASE RDB$RELATION_CONSTRAINTS failed
+null
+null
+action cancelled by trigger (1) to preserve data integrity
+Cannot delete PRIMARY KEY being used in FOREIGN KEY definition.
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.readStatusVector(AbstractJavaGDSImpl.java:2092) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.receiveResponse(AbstractJavaGDSImpl.java:2042) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.iscDsqlExecute2(AbstractJavaGDSImpl.java:1149) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.GDSHelper.executeStatement(GDSHelper.java:227) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.internalExecute(AbstractStatement.java:1424) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:867) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	... 42 common frames omitted
+
+2022-05-10 13:03:10.080 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table advert
+2022-05-10 13:03:10.090 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table category
+2022-05-10 13:03:10.100 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table shop_user
+2022-05-10 13:03:10.100 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    drop table shop_user_address_id
+2022-05-10 13:03:10.110 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table address (
+       id integer not null,
+        city varchar(255),
+        country varchar(255),
+        district varchar(255),
+        flat_number varchar(255),
+        house_number varchar(255),
+        province varchar(255),
+        street varchar(255),
+        zip_code varchar(255),
+        user_id integer,
+        primary key (id)
+    )
+2022-05-10 13:03:10.110  WARN 7212 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table address (
+       id integer not null,
+        city varchar(255),
+        country varchar(255),
+        district varchar(255),
+        flat_number varchar(255),
+        house_number varchar(255),
+        province varchar(255),
+        street varchar(255),
+        zip_code varchar(255),
+        user_id integer,
+        primary key (id)
+    )" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table address (
+       id integer not null,
+        city varchar(255),
+        country varchar(255),
+        district varchar(255),
+        flat_number varchar(255),
+        house_number varchar(255),
+        province varchar(255),
+        street varchar(255),
+        zip_code varchar(255),
+        user_id integer,
+        primary key (id)
+    )" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:442) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:325) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:169) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:164) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:81) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.16.jar:5.3.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.4.jar:2.6.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.4.jar:2.6.4]
+	at pl.szadowek91.shopProject.ShopProjectApplication.main(ShopProjectApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.4.jar:2.6.4]
+Caused by: org.firebirdsql.jdbc.FBSQLException: GDS Exception. 335544351. unsuccessful metadata update
+Table ADDRESS already exists
+null
+null
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:869) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.6.5.Final.jar:5.6.5.Final]
+	... 39 common frames omitted
+Caused by: org.firebirdsql.gds.GDSException: unsuccessful metadata update
+Table ADDRESS already exists
+null
+null
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.readStatusVector(AbstractJavaGDSImpl.java:2092) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.receiveResponse(AbstractJavaGDSImpl.java:2042) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.wire.AbstractJavaGDSImpl.iscDsqlExecute2(AbstractJavaGDSImpl.java:1149) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.gds.impl.GDSHelper.executeStatement(GDSHelper.java:227) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.internalExecute(AbstractStatement.java:1424) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	at org.firebirdsql.jdbc.AbstractStatement.execute(AbstractStatement.java:867) ~[jaybird-jdk17-2.2.5.jar:2.2.5-JDK_1.7 (build: SVNTag=Jaybird_2_2_5 date=201404271242)]
+	... 42 common frames omitted
+
+2022-05-10 13:03:10.110 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table advert (
+       id integer not null,
+        description varchar(255),
+        price integer,
+        title varchar(255),
+        category_id integer,
+        user_id integer,
+        primary key (id)
+    )
+2022-05-10 13:03:10.130 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table category (
+       id integer not null,
+        category_description varchar(255),
+        category_name varchar(255),
+        primary key (id)
+    )
+2022-05-10 13:03:10.140 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table shop_user (
+       id integer not null,
+        ban_end_date timestamp,
+        ban_start_date timestamp,
+        e_mail varchar(255),
+        f_name varchar(255),
+        active varchar(255),
+        banned varchar(255),
+        l_name varchar(255),
+        nick varchar(255),
+        password varchar(255),
+        permissions_profile varchar(255),
+        phone_number varchar(255),
+        registration_date timestamp,
+        primary key (id)
+    )
+2022-05-10 13:03:10.140 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    create table shop_user_address_id (
+       shop_user_id integer not null,
+        address_id_id integer not null
+    )
+2022-05-10 13:03:10.150 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       add constraint UK_gnaeuxk3hqr8j95iq7n26ghwg unique (address_id_id)
+2022-05-10 13:03:10.160 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table address 
+       add constraint FK6tkr4vdaywh4vhdonqaem82v7 
+       foreign key (user_id) 
+       references shop_user
+2022-05-10 13:03:10.160 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table advert 
+       add constraint FK6agljw6tcfvtb0ug6b8cvwgvb 
+       foreign key (category_id) 
+       references category
+2022-05-10 13:03:10.170 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table advert 
+       add constraint FKs51n7uify9i6im5qaupt3j5se 
+       foreign key (user_id) 
+       references shop_user
+2022-05-10 13:03:10.170 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       add constraint FKssffo45v668olwvgjfeqgh0ih 
+       foreign key (address_id_id) 
+       references address
+2022-05-10 13:03:10.179 DEBUG 7212 --- [restartedMain] org.hibernate.SQL                        : 
+    
+    alter table shop_user_address_id 
+       add constraint FKc6308n7y084do232n9lkfd4ti 
+       foreign key (shop_user_id) 
+       references shop_user
+2022-05-10 13:03:10.180  INFO 7212 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-10 13:03:10.200  INFO 7212 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-10 13:03:10.335  WARN 7212 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-10 13:03:10.990  INFO 7212 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 800be25e-603d-4cef-89c8-4694057f3915
+
+2022-05-10 13:03:11.105  INFO 7212 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-10 13:03:11.159  INFO 7212 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 13:03:11.219  INFO 7212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-05-10 13:03:11.235  INFO 7212 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Started ShopProjectApplication in 4.821 seconds (JVM running for 5.488)
+2022-05-10 13:03:34.464  INFO 18020 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Starting ShopProjectApplication using Java 16.0.1 on komp-197 with PID 18020 (D:\patrgra\shopProject\shopProject\target\classes started by Michał in D:\patrgra\shopProject\shopProject)
+2022-05-10 13:03:34.464  INFO 18020 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 13:03:34.557  INFO 18020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-10 13:03:34.559  INFO 18020 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-10 13:03:35.334  INFO 18020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-10 13:03:35.406  INFO 18020 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 4 JPA repository interfaces.
+2022-05-10 13:03:36.310  INFO 18020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-05-10 13:03:36.320  INFO 18020 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 13:03:36.320  INFO 18020 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 13:03:36.439  INFO 18020 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 13:03:36.439  INFO 18020 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1879 ms
+2022-05-10 13:03:36.650  INFO 18020 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-10 13:03:36.700  INFO 18020 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-05-10 13:03:36.865  INFO 18020 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-10 13:03:36.970  INFO 18020 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-10 13:03:37.059  INFO 18020 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (Not yet implemented.)
+2022-05-10 13:03:37.064  INFO 18020 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-10 13:03:37.115  INFO 18020 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.FirebirdDialect
+2022-05-10 13:03:37.875  INFO 18020 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-10 13:03:37.880  INFO 18020 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-10 13:03:37.929  WARN 18020 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-10 13:03:38.559  INFO 18020 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f3dce7a6-a2ed-4e9f-861c-5f9a072ba0db
+
+2022-05-10 13:03:38.670  INFO 18020 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-10 13:03:38.720  INFO 18020 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 13:03:38.779  INFO 18020 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-05-10 13:03:38.789  INFO 18020 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Started ShopProjectApplication in 5.015 seconds (JVM running for 5.811)
+2022-05-10 13:06:32.685  INFO 17852 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Starting ShopProjectApplication using Java 16.0.1 on komp-197 with PID 17852 (D:\patrgra\shopProject\shopProject\target\classes started by Michał in D:\patrgra\shopProject\shopProject)
+2022-05-10 13:06:32.687  INFO 17852 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-05-10 13:06:32.759  INFO 17852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-10 13:06:32.759  INFO 17852 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-05-10 13:06:33.575  INFO 17852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-10 13:06:33.641  INFO 17852 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
+2022-05-10 13:06:34.365  INFO 17852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-05-10 13:06:34.375  INFO 17852 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-10 13:06:34.385  INFO 17852 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-05-10 13:06:34.495  INFO 17852 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-10 13:06:34.495  INFO 17852 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1728 ms
+2022-05-10 13:06:34.695  INFO 17852 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-10 13:06:34.740  INFO 17852 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.5.Final
+2022-05-10 13:06:34.890  INFO 17852 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-10 13:06:34.985  INFO 17852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-10 13:06:35.075  INFO 17852 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (Not yet implemented.)
+2022-05-10 13:06:35.075  INFO 17852 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-10 13:06:35.115  INFO 17852 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.FirebirdDialect
+2022-05-10 13:06:35.875  INFO 17852 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-10 13:06:35.885  INFO 17852 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-10 13:06:35.936  WARN 17852 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-10 13:06:36.585  INFO 17852 --- [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 0f99f9ac-49a4-4518-ac8d-0a00f4ee02e7
+
+2022-05-10 13:06:36.695  INFO 17852 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-10 13:06:36.745  INFO 17852 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-05-10 13:06:36.805  INFO 17852 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-05-10 13:06:36.815  INFO 17852 --- [restartedMain] p.s.shopProject.ShopProjectApplication   : Started ShopProjectApplication in 4.692 seconds (JVM running for 5.297)

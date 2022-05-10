@@ -2,6 +2,7 @@ package pl.szadowek91.shopProject.entity;
 
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -14,7 +15,8 @@ import javax.persistence.*;
 public class Advert {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GenericGenerator(name = "advertId", strategy = "increment")
+    @GeneratedValue(generator = "advertId")
     @Column(updatable = false)
     private Integer id;
 
@@ -30,5 +32,5 @@ public class Advert {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private User userId;
+    private ShopUser shopUserId;
 }

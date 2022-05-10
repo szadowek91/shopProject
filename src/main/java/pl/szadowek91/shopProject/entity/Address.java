@@ -11,8 +11,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @DynamicUpdate
-@Table(name = "ADDRESS")
-public class AddressEntity {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,5 +36,5 @@ public class AddressEntity {
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
-    private UserEntity userId;
+    private User userId;
 }

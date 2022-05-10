@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,8 +17,7 @@ import java.util.Date;
 @ToString
 @Entity
 @DynamicUpdate
-@Table(name = "USER")
-public class UserEntity implements UserDetails {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,9 +38,8 @@ public class UserEntity implements UserDetails {
 
     private String eMail;
 
-    @OneToMany ()
-    @JoinColumn(name = "ADDRESS_ID")
-    private Integer addressId;
+    @OneToMany
+    private List<Address> addressId;
 
     private String permissionsProfile;
 

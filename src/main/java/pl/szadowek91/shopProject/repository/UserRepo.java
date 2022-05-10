@@ -1,7 +1,9 @@
 package pl.szadowek91.shopProject.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.szadowek91.shopProject.entity.UserEntity;
+import org.springframework.stereotype.Repository;
+import pl.szadowek91.shopProject.entity.User;
 
-public interface UserRepo extends JpaRepository<UserEntity, Integer> {
+@Repository
+public interface UserRepo extends JpaRepository<User, Integer> {
 }

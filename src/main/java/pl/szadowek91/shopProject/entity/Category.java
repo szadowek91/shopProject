@@ -11,25 +11,14 @@ import javax.persistence.*;
 @ToString
 @Entity
 @DynamicUpdate
-@Table(name = "ADVERT")
-public class AdvertEntity {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false)
     private Integer id;
 
-    @OneToOne()
-    @JoinColumn(name = "CATEGORY_ID")
-    private CategoryEntity category_id;
+    private String categoryName;
 
-    private String title;
-
-    private Integer price;
-
-    private String description;
-
-    @OneToOne
-    @JoinColumn(name = "USER_ID")
-    private Integer userId;
+    private String categoryDescription;
 }

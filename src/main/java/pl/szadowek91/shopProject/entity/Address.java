@@ -18,7 +18,7 @@ public class Address {
     @GenericGenerator(name = "addressId", strategy = "increment")
     @GeneratedValue(generator = "addressId")
     @Column(updatable = false)
-    private Integer id;
+    private Long id;
 
     private String country;  // kraj
 

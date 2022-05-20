@@ -18,7 +18,7 @@ public class Advert {
     @GenericGenerator(name = "advertId", strategy = "increment")
     @GeneratedValue(generator = "advertId")
     @Column(updatable = false)
-    private Integer id;
+    private Long id;
 
     @OneToOne()
     @JoinColumn(name = "CATEGORY_ID")

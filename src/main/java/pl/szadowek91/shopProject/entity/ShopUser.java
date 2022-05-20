@@ -24,7 +24,7 @@ public class ShopUser implements UserDetails {
     @GenericGenerator(name = "userId", strategy = "increment")
     @GeneratedValue(generator = "userId")
     @Column(updatable = false)
-    private Integer id;
+    private Long id;
 
     private String nick;
 

@@ -18,7 +18,7 @@ public class Category {
     @GenericGenerator(name = "categoryId", strategy = "increment")
     @GeneratedValue(generator = "categoryId")
     @Column(updatable = false)
-    private Integer id;
+    private Long id;
 
     private String categoryName;
 

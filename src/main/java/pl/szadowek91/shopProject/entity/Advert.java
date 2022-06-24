@@ -5,6 +5,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -26,9 +27,11 @@ public class Advert {
 
     private String title;
 
-    private Integer price;
+    private BigDecimal price;
 
     private String description;
+
+//    private Image photo; // TODO addding photo to advert.
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
